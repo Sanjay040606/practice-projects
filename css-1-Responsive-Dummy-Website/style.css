@@ -1,0 +1,130 @@
+/* reset page */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+/* general style */
+header h1 , footer{
+    background-color: hsl(186, 100%, 6%);
+    color: whitesmoke;
+    text-align: center;
+}
+nav ul{
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+    font-weight: bold;
+}
+li{
+    list-style-type: none;  
+} 
+li a{
+    color: black;
+    font-size: 1.5rem;
+}
+
+a:active , a:focus , a:hover{
+    color: rgba(0, 0, 0, 0.322);
+}
+body{
+    background-image: radial-gradient(whitesmoke,hsl(234, 40%, 42%));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+/* card style */
+.card{
+    scroll-margin-top: 6rem;
+    background-color: hsla(0, 83%, 48%, 0.507);
+    border-radius: 5%;
+    width: min(100%,350px);
+    outline: 2px solid rgb(128, 255, 0);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card figure{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.card img{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    outline: 3px double hsl(334, 100%, 46%)
+}
+.card figcaption{
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+header{
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+footer{
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+}
+
+/* small */
+@media screen and (min-width: 576px) {
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    .card{
+        width: min(100%,400px);
+    }
+    .card:last-child{
+        order: -1;
+    }
+}
+
+ /* medium */
+@media screen and (min-width: 768px){
+    nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,325px);
+    }
+    .card figure{
+        flex-flow: column-reverse;
+    }
+    .card p{
+        padding: 1rem;
+    }
+}
+/* large */
+@media screen and (min-width: 992px){
+    .card{
+        width: min(100%, 400px);
+    }
+    .card:nth-child(2){
+        order: -1;
+    }
+}
+/* XL */
+@media screen and (min-width: 1200px){
+    .card{
+        width: min(33% - 1rem , 500px);
+    } 
+}
